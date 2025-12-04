@@ -11,6 +11,12 @@ import argparse
 import subprocess
 from pathlib import Path
 
+# 设置 Windows 控制台 UTF-8 编码
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
 
 def run_command(cmd, description):
     """执行命令并显示进度"""
