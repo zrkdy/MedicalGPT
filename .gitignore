@@ -166,6 +166,16 @@ data/finetune/*.jsonl
 data/reward/*.jsonl
 data/grpo/*.jsonl
 
+# 评测驱动训练 - 排除大文件
+data/train_vectorized/
+data/train_vectorized/*.jsonl
+
+# 评测驱动训练 - 允许小文件（可以用Git管理）
+!data/eval_benchmark/
+!data/eval_vectorized/
+!data/recalled_data/
+!data/finetune/medical_eval_driven.jsonl
+
 # 保留小的示例数据文件
 !data/**/sample.json
 !data/**/example.json
